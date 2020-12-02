@@ -12,7 +12,7 @@ class ClientWindow(QWidget):
         self.initUI()
 
     def initUI(self):
-        self.setWindowTitle('Chatting')
+        self.setWindowTitle('Client Chat')
         
         # 채팅창 부분
         gb = QGroupBox('Message')
@@ -41,9 +41,9 @@ class ClientWindow(QWidget):
 
     def updateMessage(self, msg, isSender):
         if isSender:
-            self.rMsg.addItem(QListWidgetItem("send : "+msg))
+            self.rMsg.addItem(QListWidgetItem("send : " + msg))
         else:
-            self.rMsg.addItem(QListWidgetItem("receive : "+msg))
+            self.rMsg.addItem(QListWidgetItem("receive : " + msg))
  
         self.rMsg.setCurrentRow(self.rMsg.count()-1)
 

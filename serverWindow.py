@@ -8,11 +8,10 @@ class ServerWindow(QWidget):
     def __init__(self):
         super().__init__()
         self.date = QDateTime.currentDateTime()
-        self.s = serverSocket.ServerSocket(self)
         self.initUI()
 
     def initUI(self):
-        self.setWindowTitle('Chatting')
+        self.setWindowTitle('Server Chat')
         
         # 채팅창 부분
         gb = QGroupBox('Message')
@@ -38,6 +37,8 @@ class ServerWindow(QWidget):
 
         self.setLayout(box)
         self.show()
+
+        self.s = serverSocket.ServerSocket(self)
 
     def updateMessage(self, msg, isSender):
         if isSender:
